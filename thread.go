@@ -88,7 +88,7 @@ const (
 
 type Attachment struct {
 	FileID string `json:"file_id"`
-	Tools []AssistantToolType `json:"tools,omitempty"`
+	Tools []AssistantToolTypeObject `json:"tools,omitempty"`
 }
 
 type ThreadMessage struct {

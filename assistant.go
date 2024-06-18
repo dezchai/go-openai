@@ -36,6 +36,10 @@ const (
 	AssistantToolTypeFunction        AssistantToolType = "function"
 )
 
+type AssistantToolTypeObject struct {
+	Type AssistantToolType `json:"type"`
+}
+
 type AssistantTool struct {
 	Type     AssistantToolType   `json:"type"`
 	Function *FunctionDefinition `json:"function,omitempty"`
