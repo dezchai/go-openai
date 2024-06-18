@@ -86,10 +86,16 @@ const (
 	ThreadMessageRoleUser ThreadMessageRole = "user"
 )
 
+type Attachment struct {
+	FileID string `json:"file_id"`
+	Tools []AssistantToolType `json:"tools,omitempty"`
+}
+
 type ThreadMessage struct {
 	Role     ThreadMessageRole `json:"role"`
 	Content  string            `json:"content"`
-	FileIDs  []string          `json:"file_ids,omitempty"`
+	FileIDs  []string          `json:"file_ids,omitempty"` // deprecated in Assistants V2
+	Attachments []Attachment    `json:"attachments,omitempty"`
 	Metadata map[string]any    `json:"metadata,omitempty"`
 }
 
